@@ -13,6 +13,7 @@
   @apply border border-secondary shadow-xl bg-primary px-2 max-w-full w-full mx-auto
 }
 
+
 .dark {
   --color-bg-primary: #2d3748;
   --color-bg-primary: #2d3748;

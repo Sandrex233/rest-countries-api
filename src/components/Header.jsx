@@ -2,7 +2,7 @@ import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
 
-const Navbar = () => {
+const Header = () => {
 
     return (
         <div className='rounded-div flex items-center justify-between h-20 font-bold'>
@@ -16,4 +16,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;
