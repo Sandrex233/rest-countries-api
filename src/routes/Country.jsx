@@ -20,7 +20,7 @@ const Country = () => {
             console.log(error)
         })
     }, []);
-    console.log(country);
+    // console.log(country);
 
     const search = (country) => {
         // eslint-disable-next-line
@@ -62,12 +62,12 @@ const Country = () => {
 
     return (
         <div>
-            <div className="mt-10 ml-10 mr-10 flex justify-between">
-                <label htmlFor="search-form" className="flex items-center" >
+            <div className="mt-10 ml-10 mr-10 flex justify-between ">
+                <label htmlFor="search-form" className="flex items-center bg-[#2B3945]" >
                     <BiSearch />
                     <input
                         type="search"
-                        className="rounded-md"
+                        className="rounded-md bg-inherit"
                         placeholder="Search for a country..."
                         value={q}
                         onChange={handleChange}
@@ -90,18 +90,16 @@ const Country = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center mx-auto px-10 py-10 space-x-4 gap-x-6 gap-y-24">
-                {search(country).map((item, id) =>
-                    <div key={id}>
-                        <Link to={`/${item.alpha3Code}`}>
-                            <div className="h-auto w-auto min-w-xs min-h-max">
-                                <img src={item.flag} alt={item.name} className="rounded-t-md" />
-                                <h1 className="font-bold text-xl">{item.name}</h1>
-                                <h1><b>Population:</b> {item.population.toLocaleString()}</h1>
-                                <h1><b>Region:</b> {item.region}</h1>
-                                <h1><b>Capital</b> {item.capital}</h1>
-                            </div>
-                        </Link>
-                    </div>
+                {search(country).map((item, index) =>
+                    <Link to={`/${item.alpha3Code}`} state={item} key={index}>
+                        <div className="h-auto w-auto min-w-xs min-h-max">
+                            <img src={item.flag} alt={item.name} className="rounded-t-md" />
+                            <h1 className="font-bold text-xl">{item.name}</h1>
+                            <h1><b>Population:</b> {item.population.toLocaleString()}</h1>
+                            <h1><b>Region:</b> {item.region}</h1>
+                            <h1><b>Capital</b> {item.capital}</h1>
+                        </div>
+                    </Link>
                 )}
             </div>
         </div>
