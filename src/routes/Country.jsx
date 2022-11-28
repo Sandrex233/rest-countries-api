@@ -53,6 +53,7 @@ const Country = () => {
         setQ(e.target.value)
     }
 
+
     const handleSelect = (e) => {
         setFilterParam(e.target.value)
     }
@@ -62,19 +63,22 @@ const Country = () => {
 
     return (
         <div>
-            <div className="mt-10 ml-10 mr-10 flex justify-between ">
-                <label htmlFor="search-form" className="flex items-center bg-[#2B3945]" >
+            <div className="mt-10 ml-10 mr-10 flex justify-between">
+                <div htmlFor="search-form" className="flex items-center border border-secondary bg-secondary shadow-xl  px-2" >
                     <BiSearch />
                     <input
                         type="search"
-                        className="rounded-md bg-inherit"
+                        className="bg-inherit p-2"
                         placeholder="Search for a country..."
                         value={q}
                         onChange={handleChange}
                     />
-                </label>
-                <div>
+
+
+                </div>
+                <div className="flex items-center border bg-secondary border-secondary rounded-md shadow-xl  px-2" >
                     <select
+                        className='bg-inherit'
                         onChange={handleSelect}
                         aria-label="Filter Countries By Countries"
                     >
