@@ -16,7 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" exact element={<Country />} />
-          <Route path="/:id" element={<CountryDetails />} />
+          <Route path="/CountryDetails" element={<CountryDetails />} />
         </Routes>
       </div>
     </ThemeProvider>

@@ -63,8 +63,8 @@ const Country = () => {
 
     return (
         <div>
-            <div className="mt-10 ml-10 mr-10 flex justify-between">
-                <div htmlFor="search-form" className="flex items-center border border-secondary bg-secondary shadow-xl  px-2" >
+            <div className="mt-10 ml-10 mr-10 flex justify-between flex-col md:flex-row space-y-5 md:space-y-0">
+                <div htmlFor="search-form" className="flex items-center border border-secondary rounded-md  bg-secondary shadow-xl  px-2" >
                     <BiSearch />
                     <input
                         type="search"
@@ -76,7 +76,7 @@ const Country = () => {
 
 
                 </div>
-                <div className="flex items-center border bg-secondary border-secondary rounded-md shadow-xl  px-2" >
+                <div className="flex items-center justify-center border bg-secondary border-secondary rounded-md shadow-xl max-w-[150px]  md:px-2" >
                     <select
                         className='bg-inherit'
                         onChange={handleSelect}
@@ -95,7 +95,7 @@ const Country = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center mx-auto px-10 py-10 space-x-4 gap-x-6 gap-y-24">
                 {search(country).map((item, index) =>
-                    <Link to={`/${item.alpha3Code}`} state={item} key={index}>
+                    <Link to={'/CountryDetails'} state={item} key={index}>
                         <div className="h-auto w-auto min-w-xs min-h-max">
                             <img src={item.flag} alt={item.name} className="rounded-t-md" />
                             <h1 className="font-bold text-xl">{item.name}</h1>
