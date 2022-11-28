@@ -17,7 +17,7 @@ const CountryDetails = () => {
         <div>
             <button onClick={goBack} type='button' className='flex items-center border bg-secondary border-secondary rounded-md shadow-xl px-3 py-2 m-6'><BsArrowLeft className='mr-1' /> Go Back</button>
             <div className='flex justify-center items-center mt-8 md:-mt-24'>
-                <div className='md:grid grid-cols-3 grid-rows-3 justify-center space-y-10 md:space-y-0'>
+                <div className='md:grid grid-cols-3 grid-rows-3 justify-center space-y-10 md:space-y-0 max-w-xs md:max-w-none'>
                     <div className='row-start-2 col-start-1 row-end-3 col-end-2 '>
                         <img src={state.flag} alt={state.name} className="rounded-t-md max-w-xs md:max-w-md" />
                     </div>
