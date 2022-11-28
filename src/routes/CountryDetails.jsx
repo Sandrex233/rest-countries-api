@@ -6,7 +6,7 @@ const CountryDetails = () => {
 
     const { state } = useLocation()
 
-    console.log(state);
+    // console.log(state);
     const navigate = useNavigate();
 
     const goBack = () => {
