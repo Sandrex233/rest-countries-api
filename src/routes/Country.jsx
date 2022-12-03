@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { BiSearch } from 'react-icons/bi';
 import { Link } from "react-router-dom";
-
+import useDebounce from '../hooks/useDebounce';
 
 const url = 'https://restcountries.com/v2/all'
 
@@ -12,6 +12,8 @@ const Country = () => {
     const [q, setQ] = useState("");
     const [searchParam] = useState(["name"]);
     const [filterParam, setFilterParam] = useState(["All"])
+
+    const debouncedSearchTerm = useDebounce(q, 1000)
 
     useEffect(() => {
         axios.get(url).then((response) => {
@@ -32,7 +34,7 @@ const Country = () => {
                         item[newItem]
                             .toString()
                             .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
+                            .indexOf(debouncedSearchTerm.toLowerCase()) > -1
                     )
                 })
                 // eslint-disable-next-line
@@ -42,7 +44,7 @@ const Country = () => {
                         item[newItem]
                             .toString()
                             .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
+                            .indexOf(debouncedSearchTerm.toLowerCase()) > -1
                     )
                 })
             }
